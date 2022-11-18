@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css'
+import { IoBasketOutline } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 
 function Header() {
   return (
@@ -9,7 +11,7 @@ function Header() {
 
       <div className='header_search'>
         <input className="header_searchInput" type="text" />
-        {/* Logo */}
+        <IoSearch className='header_searchIcon' />
       </div>
       
       <div className='header_nav'>
@@ -30,6 +32,11 @@ function Header() {
           <span className='header_optionLineTwo'>Prime</span>
           
         </div>
+      </div>
+
+      <div className='header_optionBasket'>
+        <IoBasketOutline />
+        <span className='header_optionLineTwo header_basketCount'>0</span>
       </div>
       
     </div>

@@ -1,13 +1,13 @@
 import React from "react";
 import './App.css';
 import Header from './components/Header/index'
+import Home from './components/Home/index'
 
 function App() {
   return (
-    //BEM
     <div className="App">
       <Header />
-      {/* Home */}
+      <Home />
     </div>
   );
 }

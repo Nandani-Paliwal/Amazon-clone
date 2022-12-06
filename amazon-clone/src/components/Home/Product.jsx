@@ -1,27 +1,35 @@
-import React from 'react'
-import "./Product.css"
+import React from "react";
+import "./Product.css";
 
-function Product() {
+function Product({ tittle, image, price, rating }) {
   return (
-    <div className='Product'>
-      <div className="product_info">
-        <p>The lean startup</p>
-        <p className='product_price'>
-            <small>$</small>
-            <strong>19.99</strong>
+    <div className="Product flex flex-col items-center justify-end m-2 p-5 w-full max-h-97 bg-white z-1 ">
+      <div className="product_info h-24 mb-4">
+        <p>
+          {tittle}
         </p>
-        <div className="product_rating">
-            <p>🌟</p>
-            <p>🌟</p>
-            <p>🌟</p>
-        </div>
+        <p className="product_price mt-1">
+          <small>$</small>
+          <strong>{price}</strong>
+        </p>
+        <div className="product_rating flex ">
+          {Array(rating).fill().map((_, i) => (
+             <p>🌟</p>
+          ))}
 
-        <img className='img w-full h-full'  src='https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81-QB7nDh4L.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.in%2FLean-Startup-Entrepreneurs-Continuous-Innovation%2Fdp%2F0307887898&tbnid=S821FdAakem-KM&vet=12ahUKEwjrxM_-48j7AhXC0qACHTSIA1gQMygAegUIARC_AQ..i&docid=rTFwdcQdJS89dM&w=1688&h=2550&q=lean%20startup%20book&hl=en-GB&ved=2ahUKEwjrxM_-48j7AhXC0qACHTSIA1gQMygAegUIARC_AQ' alt='' />
+          
+        </div>
       </div>
+
+      <img
+        className="img w-full max-h-52 object-contain mb-4"
+        src={image}
+        alt=""
+      />
+
+      <button className="button bg-addtobasket mt-2">Add to Basket</button>
     </div>
-  )
+  );
 }
 
-export default Product
-
-
+export default Product;

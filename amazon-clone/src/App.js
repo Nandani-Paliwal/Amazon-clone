@@ -3,20 +3,22 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
+// import CheckoutPage from "./pages/CheckoutPage";
+import Checkout from "./components/Checkout";
 
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <HomePage /> } />
-        <Route path="checkout" element={<div>checkout Page</div>} />
-        <Route 
-          path='t' />
-
+    <BrowserRouter> 
+      <div className="app">
+        <Header />
+        <Routes>
+        <Route path="/" element={ <Home /> } />
+        <Route path="checkout" element={ <Checkout /> } />
       </Routes>
+      </div>
     </BrowserRouter>
   )
 

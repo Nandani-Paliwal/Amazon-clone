@@ -10,6 +10,8 @@ module.exports = {
         searchicon: '#cd9042',
         white: 'white',
         addtobasket: '#f0c14b',
+        subtotal: '#f3f3f3',
+        darkgray: '#111'
       },
       zIndex: {
         '-1': -1,
@@ -21,7 +23,9 @@ module.exports = {
       },
       borderColor: {
         'bordercolor': '#a88734 #9c7e31 #846129',
-      }
+        'subtotalborder': '#dddddd'
+      },
+      
 
     },
   },

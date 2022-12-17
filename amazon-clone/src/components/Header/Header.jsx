@@ -1,15 +1,19 @@
 import React from "react";
 import { IoBasketOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header h-16 flex items-center sticky inset-0 z-100 bg-headerbg">
+      <Link to="/">
       <img
         className="header_logo w-24 object-contain my-0 mx-3.5 mt-5"
         src="https://cdn.discordapp.com/attachments/1012814107994509353/1040922413455654952/unknown.png"
         alt="amazon_logo"
       />
+      </Link>
+      
 
       <div className="header_search flex flex-1 items-center rounded-3xl w-6">
         <input
@@ -38,12 +42,14 @@ function Header() {
         </div>
       </div>
 
+      <Link to="/checkout">
       <div className="header_optionBasket flex items-center text-white">
         <IoBasketOutline />
         <span className="header_optionLineTwo header_basketCount mx-3 my-3">
           0
         </span>
       </div>
+      </Link>
     </div>
   );
 }

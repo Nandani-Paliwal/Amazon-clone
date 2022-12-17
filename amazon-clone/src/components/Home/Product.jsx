@@ -1,5 +1,4 @@
 import React from "react";
-import "./Product.css";
 
 function Product({ tittle, image, price, rating }) {
   return (
@@ -27,7 +26,7 @@ function Product({ tittle, image, price, rating }) {
         alt=""
       />
 
-      <button className="button bg-addtobasket mt-2">Add to Basket</button>
+      <button className="addToBasketButton bg-addtobasket mt-2  border border-solid border-bordercolor">Add to Basket</button>
     </div>
   );
 }

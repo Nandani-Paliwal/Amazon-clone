@@ -2,8 +2,11 @@ import React from "react";
 import { IoBasketOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../../StateProvider";
 
 function Header() {
+const [{ basket }, dispatch] = useStateValue();
+
   return (
     <div className="header h-16 flex items-center sticky inset-0 z-100 bg-headerbg">
       <Link to="/">
@@ -46,7 +49,7 @@ function Header() {
       <div className="header_optionBasket flex items-center text-white">
         <IoBasketOutline />
         <span className="header_optionLineTwo header_basketCount mx-3 my-3">
-          0
+          {basket?.length}
         </span>
       </div>
       </Link>

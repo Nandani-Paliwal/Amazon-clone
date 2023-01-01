@@ -3,28 +3,29 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import HomePage from "./pages/HomePage";
-// import CheckoutPage from "./pages/CheckoutPage";
 import Checkout from "./components/Checkout";
-
-
+import Login from "./components/Login";
 
 function App() {
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
       <div className="app">
-        <Header />
         <Routes>
-        <Route path="/" element={ <Home /> } />
-        <Route path="checkout" element={ <Checkout /> } />
-      </Routes>
+          <Route path="/">
+              <Header />
+            <Home />
+          </Route>
+          <Route path="/checkout">
+              <Header />
+            <Checkout />
+          </Route>
+          <Route path="/login">
+              <Login />
+          </Route>
+        </Routes>
       </div>
     </BrowserRouter>
-  )
-
-
-
-
+  );
 
   // const router = createBrowserRouter([
   //   {
@@ -43,7 +44,7 @@ function App() {
   //     <Header />
   //     <Home />
   //   </RouterProvider>
-    
+
   // );
 }
 

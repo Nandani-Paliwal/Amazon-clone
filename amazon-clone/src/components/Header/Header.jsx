@@ -5,18 +5,17 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 
 function Header() {
-const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   return (
     <div className="header h-16 flex items-center sticky inset-0 z-100 bg-headerbg">
       <Link to="/">
-      <img
-        className="header_logo w-24 object-contain my-0 mx-3.5 mt-5"
-        src="https://cdn.discordapp.com/attachments/1012814107994509353/1040922413455654952/unknown.png"
-        alt="amazon_logo"
-      />
+        <img
+          className="header_logo w-24 object-contain my-0 mx-3.5 mt-5"
+          src="https://cdn.discordapp.com/attachments/1012814107994509353/1040922413455654952/unknown.png"
+          alt="amazon_logo"
+        />
       </Link>
-      
 
       <div className="header_search flex flex-1 items-center rounded-3xl w-6">
         <input
@@ -27,31 +26,37 @@ const [{ basket }, dispatch] = useStateValue();
       </div>
 
       <div className="header_nav flex justify-evenly ">
+        <Link>
+          <div className="header_option flex flex-col mx-3 my-3 text-white">
+            <span className="header_optionLineOne text-xs">Hello Guest</span>
+            <span className="header_optionLineTwo text-sm font-extrabold">
+              Sign In
+            </span>
+          </div>
+        </Link>
+
         <div className="header_option flex flex-col mx-3 my-3 text-white">
-          <span className="header_optionLineOne text-xs">Hello Guest</span>
+          <span className="header_optionLineOne text-xs">Returns</span>
           <span className="header_optionLineTwo text-sm font-extrabold">
-            Sign In
+            & Orders
           </span>
         </div>
 
         <div className="header_option flex flex-col mx-3 my-3 text-white">
-          <span className="header_optionLineOne text-xs">Returns</span>
-          <span className="header_optionLineTwo text-sm font-extrabold">& Orders</span>
-        </div>
-
-        <div className="header_option flex flex-col mx-3 my-3 text-white">
           <span className="header_optionLineOne text-xs">Your</span>
-          <span className="header_optionLineTwo text-sm font-extrabold">Prime</span>
+          <span className="header_optionLineTwo text-sm font-extrabold">
+            Prime
+          </span>
         </div>
       </div>
 
       <Link to="/checkout">
-      <div className="header_optionBasket flex items-center text-white">
-        <IoBasketOutline />
-        <span className="header_optionLineTwo header_basketCount mx-3 my-3">
-          {basket?.length}
-        </span>
-      </div>
+        <div className="header_optionBasket flex items-center text-white">
+          <IoBasketOutline />
+          <span className="header_optionLineTwo header_basketCount mx-3 my-3">
+            {basket?.length}
+          </span>
+        </div>
       </Link>
     </div>
   );

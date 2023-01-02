@@ -43,7 +43,7 @@ function Product({ id, title, image, price, rating }) {
         alt=""
       />
 
-      <button onClick={addToBasket} className="addToBasketButton bg-addtobasket mt-2  border border-solid border-bordercolor">Add to Basket</button>
+      <button onClick={addToBasket} className="addToBasketButton bg-button mt-2  border border-solid border-bordercolor">Add to Basket</button>
     </div>
   );
 }

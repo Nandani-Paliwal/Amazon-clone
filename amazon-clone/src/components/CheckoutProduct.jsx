@@ -34,7 +34,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
         </div>
         <button
           onClick={removeFromBasket}
-          className="removeFromBasket bg-addtobasket mt-3  border border-solid border-bordercolor cursor-pointer"
+          className="removeFromBasket bg-button mt-3  border border-solid border-bordercolor cursor-pointer"
         >
           Remove from Basket
         </button>

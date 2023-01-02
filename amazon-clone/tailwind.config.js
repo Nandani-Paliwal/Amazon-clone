@@ -9,7 +9,7 @@ module.exports = {
         headerbg: '#131921',
         searchicon: '#cd9042',
         white: 'white',
-        addtobasket: '#f0c14b',
+        button: '#f0c14b',
         subtotal: '#f3f3f3',
         darkgray: '#111'
       },
@@ -25,6 +25,9 @@ module.exports = {
         'bordercolor': '#a88734 #9c7e31 #846129',
         'subtotalborder': '#dddddd'
       },
+      width: {
+        '98': '98%'
+      }
       
 
     },

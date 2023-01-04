@@ -2,10 +2,17 @@ import React from "react";
 import { IoBasketOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { auth } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if(user) {
+      auth.signOut();
+    }
+  }
 
   return (
     <div className="header h-16 flex items-center sticky inset-0 z-100 bg-headerbg">
@@ -26,11 +33,11 @@ function Header() {
       </div>
 
       <div className="header_nav flex justify-evenly ">
-        <Link to="/Login">
-          <div className="header_option flex flex-col mx-3 my-3 text-white">
+        <Link to={!user && '/login'}>
+          <div onClick={handleAuthentication} className="header_option flex flex-col mx-3 my-3 text-white">
             <span className="header_optionLineOne text-xs">Hello Guest</span>
             <span className="header_optionLineTwo text-sm font-extrabold">
-              Sign In
+              {user ? 'Sign Out' : 'Sign In'}
             </span>
           </div>
         </Link>

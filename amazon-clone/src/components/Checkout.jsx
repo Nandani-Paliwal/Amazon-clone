@@ -4,7 +4,7 @@ import { useStateValue } from "../StateProvider";
 import Subtotal from "./Subtotal";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout flex p-5 max-h-full bg-white ">
@@ -16,6 +16,7 @@ function Checkout() {
         />
 
         <div>
+          <h3>Hello, {user.email}</h3>
           <h2 className="checkout_tittle mr-3 p-3 border-b border-gray-300 ">
             Your shopping Basket
           </h2>

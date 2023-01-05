@@ -35,7 +35,7 @@ function Header() {
       <div className="header_nav flex justify-evenly ">
         <Link to={!user && '/login'}>
           <div onClick={handleAuthentication} className="header_option flex flex-col mx-3 my-3 text-white">
-            <span className="header_optionLineOne text-xs">Hello Guest</span>
+            <span className="header_optionLineOne text-xs">Hello, {user ? user.email : 'Guest'}</span>
             <span className="header_optionLineTwo text-sm font-extrabold">
               {user ? 'Sign Out' : 'Sign In'}
             </span>
@@ -70,3 +70,4 @@ function Header() {
 }
 
 export default Header;
+ 
